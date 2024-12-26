@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.21.2"
+    "board-api": "file:",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "6.12",
+    "mongoose": "^8.9.2"
   },
   "scripts": {
     "start": "node --watch src/app.js"
   },
-  "devDependencies": {},
+  "type": "module",
   "author": "",
   "license": "ISC"
 }

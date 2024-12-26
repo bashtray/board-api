@@ -1,22 +1,21 @@
 import express from "express";
-
+import dotenv from 'dotenv'
+import { run_db } from "./config/db.config.js";
 import taskRouter from "./routes/task.js";
 
-const port = 5000;
+dotenv.config()
+
+const port = process.env.PORT;
 
 // initialize express
 const app = express()
 
-// create a route
-
-// app.get("/", (req, res) => {
-//     res.send("Hello world")
-// })
-
+// routes
 app.use("/tasks", taskRouter);
 
 // listen to port
 
 app.listen(port,  () => {
-    console.log(`Server is running on port ${port}`);
+	run_db()
+	console.log(`Server is running on port ${port}`);
 })
